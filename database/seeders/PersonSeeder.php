@@ -12,6 +12,13 @@ class PersonSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Person::factory()
+            ->count(4) // 4 person
+            ->hasTasks(3) // each of them will have 3 tasks
+            ->create()
+        
+        Person::factory()
+            ->count(2) // 4 person without tasks
+            ->create()
     }
 }

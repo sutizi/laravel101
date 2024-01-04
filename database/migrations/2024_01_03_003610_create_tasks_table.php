@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->integeer('person_id');
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->dateTime('creation_time');
+            $table->string('status'); // new, in-progress, completed
             $table->timestamps();
         });
     }
